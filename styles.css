@@ -1,26 +1,26 @@
 body {
     background-color: rgb(rgb(184, 25, 25));
     background-color: #800000;
-
+    color:rgb( 16, 15, 15);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 h1 {
-    background-color: rgb(16, 15, 15);
+    background-color:rgb( 16, 15, 15);
     color:rgb(245, 239, 239);
 }
 
 
 header {
     
-    color: rgb(rgb(71, 70, 70));
+    color: rgb(rgb(11, 11, 11));
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 20px;
 } 
 
 h2 {
-     color: rgb(rgb(71, 70, 70))
+     color: rgb(rgb(9, 9, 9))
 }
 
 nav a {
