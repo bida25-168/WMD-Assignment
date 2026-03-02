@@ -1,11 +1,13 @@
 body {
     background-color: rgb(rgb(184, 25, 25));
+    background-color: #800000;
+
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 h1 {
     background-color: rgb(16, 15, 15);
-    color:rgb(114, 3, 3);
+    color:rgb(245, 239, 239);
 }
 
 
@@ -45,7 +47,7 @@ main img{
 }
 
 footer{
-    background-color: rgb(130, 8, 16);
+    background-color: rgb(9, 9, 9);
     color: white;
     text-align: centre;
     padding: 10px;
