@@ -168,6 +168,35 @@ main img{
     font-weight:bold;
     padding: 8px 12px;
 }
+button{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #800000;
+    color: white;
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+.btn-signup {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #800000;
+    color: white;
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    white-space: nowrap;  /* Prevents text wrapping */
+}
+
+.btn-signup:hover {
+    background-color: #660000;
+    transform: scale(1.05);
+}
 
 @media(max-width: 768px){
     .navbar-brand{
@@ -184,6 +213,11 @@ main img{
     }
     .card{
         margin-top: 20px;
+    }
+    .btn-signup {
+        margin-right: 10px;
+        padding: 6px 15px;
+        font-size: 0.9rem;
     }
 }
 

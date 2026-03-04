@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #800000;
+            color: white !important;
+            position: relative;
+            
+        }
+        body::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1550px;
+            height: 100%;
+            background-image: url(https://www.shutterstock.com/image-photo/defocused-background-modern-auditorium-interior-600nw-2726942283.jpg);
+            background-size: cover;
+            background-position: left center;
+            opacity: 0.6;
+            z-index: 0;
+        }   
+        form {
+            width: 400px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px (rgb(77, 76, 76));
+            border: 2px solid lightgrey 0,5;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(5px);
+            
+
+        }
+        fieldset {
+            border: 1px solid #ffd700 ;
+            padding: 10px;
+            margin: 0;
+            background-color: white 0.5;
+;
+        }
+        legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #800000;
+            font: bold georgia;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: rgb(54, 53, 53);
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea,
+        input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            background-color: #f8f8f8 0.85;
+            color:#333333 ;
+            
+        }
+        .gender-group {
+            margin-bottom: 10px;
+        }
+        .gender-group label {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        input[type="radio"] {
+            margin-left: 10px;
+            vertical-align: middle;
+            accent-color: #800000;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid #ffd700;
+            cursor: pointer;
+        }
+        select option{
+            background-color: white;
+            border-color: lightgray;
+        }
+        select option:hover{
+            color: #ff6b6b;
+        }
+        
+#responseMessage {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    color: #800000;
+    font-weight: bold;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+   
+     <form onsubmit="return showMessage()">
+        <fieldset>
+            <legend>Create an account</legend>
+            <label for="name">Enter your full name:</label>
+            <input type="text" id="name" name="name" required />
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email" required />
+            <label for="password">Enter your password:</label>
+            <input type="password" id="password" name="pass" required />
+            <label for="confirmPassword">Confirm your password:</label>
+            <input type="password" id="confirmPassword" name="confirmPass" required />
+            <label>Enter your gender:</label>
+            <div class="gender-group">
+                <input type="radio" name="gender" value="male" id="male" required />
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="female" id="female" />
+                <label for="female">Female</label>
+                <input type="radio" name="gender" value="others" id="others" />
+                <label for="others">Others</label>
+            </div>
+            <label for="dob">Enter your Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required />
+            <label for="school">Level of education:</label>
+            <select id="level" name="level" required>
+                <option value>--Select level of education--</option>
+                <option value="Option 1">Higher school education</option>
+                <option value="Option 2">Secondary Education</option>
+                <option value="Öption 3">Primary Education</option>
+             </select>
+            <input type="submit" value="Submit" />
+        </fieldset>
+    </form>
+    <div id="responseMessage" style="display: none;">
+        Thank you for signing up! Your account has been created.
+    </div>
+    <script>
+        function showMessage() {
+            //Show the message
+            document.getElementById('responseMessage').style.display = 'block';
+            //Clear the form
+            document.querySelector('form').reset();
+            //Prevent page refresh
+            return false;
+        }
+    </script>
+
+</body>
+</html>
