@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Debate Master</title>
+    <style>
+        body{
+            background-color: #800000;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .login-container{
+            max-width: 450px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+            
+
+        .login-container h1{
+            color: #800000;
+            margin-bottom: 30px;
+        }
+          
+        .login-form .form-label {
+            font-weight: bold;
+            color:#333333;
+        }
+        .login-form .form-control {
+            border: 1px solid #ccc ;
+            padding: 12px;
+            border-radius: 5px;
+        }
+        .login-form .form-control:focus {
+            border-color: #800000;
+            box-shadow: 0 0 5px rgba(128, 0, 0, 0.3);
+        }
+        .forgot-link {
+            color: #800000;
+            text-decoration: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: block;
+            margin-bottom: 15px;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15Px;
+            box-sizing: border-box;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            background-color: #f8f8f8;
+            color:#333333 ;
+            
+        }
+        input[type="email"]:focus,
+        input[type="password"]:focus{
+            border-color: #800000;
+            outline: none;
+            box-shadow: 0 0 5px rgba(128, 0, 0, 0.3);
+        }
+        .btn-login {
+            background-color: #800000;
+            color: white;
+            border: 2px solid #ffd700;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width:100%
+        }
+        .btn-login:hover {
+            background-color: #660000;
+            transform: scale(1.02);
+        }
+        .btn-login:hover{
+            background-color: #660000;
+            transform: scale(1.02);
+        }
+        .create-link{
+            color: #800000;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+        }
+        .create-link:hover{
+            color: #ffd700;
+            text-decoration: underline;
+        }
+        .alert-success{
+            color: #155724;
+            background-color: #4dedda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+.text-align {
+    text-align: center;
+}
+.mt-4{
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <div id="resetMessage" class="alert-success" style="display: none;">
+        </div>
+        <form id="loginForm">
+            <label class="form-label">Enter your email:</label>
+            <input type="email" id="email" name="email" required />
+            <label class="form-label">Enter your password:</label>
+            <input type="password" id="password" name="password" required />
+            <a href="#" id="forgotPasswordLink" class="forgot-link">Forgot Password?</a>
+            <button type="submit" class="btn-login">Login</button>
+            <p class="text-center mt-4">Don't have an account?<a href="sign-in.html" class="create-link">Create Account</a>
+            </p>
+        </form>
+    </div>
+    <script>
+        //Handle form submission
+        document.getElementById('loginForm').addEventListener('click', function(e) {
+                e.preventDefault();
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+                if (email === '' || password === '') {
+                    alert('Please enter both email address and password');
+                    return;
+                }
+                alert('Login successful! Redirecting to home Page...');
+                //Redirecting to home page after 3 seconds
+                setTimeout(function() {
+                    window.location.href = '../index.html';
+                }, 2000);
+            });
+
+            //Handle forgot password link
+            document.getElementById('forgotPasswordLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                var email = document.getElementById('email').value;
+                if (email === ''){
+                    alert('Please enter email address.');
+                    return;
+            }
+            alert('Login successful! Redirecting to home page')
+            //Redirect to the home page after 3 seconds
+            setTimeout(function() {
+                window.location.href = '../index.html';
+            }, 2000);
+        });
+        //Handle forgot password link
+        document.getElementById('forgotPasswordLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                //Get the email from the form
+                var email = document.getElementById('email').value;
+                //Check if email is entered
+                if (email === '') {
+                    alert('Please enter your email address first.');
+                    return;
+            }
+            //Show the success message
+            var messageDiv = document.getElementById('resetMessage')
+            messageDiv.style.display = 'block';
+            //Hide message after 5 seconds
+            setTimeout(function() {
+                messageDiv.style.display = 'none'
+            }, 5000);
+
+        });
+    </script>
+
+</body>
+</html>

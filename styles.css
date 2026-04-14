@@ -125,6 +125,8 @@ navbar{
     margin: 0 10px;
     position: relative;
     transition: color 0.3s ease;
+    display: inline-block;
+    padding: 8px 15px;
 }
 
 .nav-link:hover{
@@ -154,7 +156,35 @@ navbar{
 .nav-link:hover::after{
     width: 80%;
 }
-
+.tips-list{
+    list-style-type: none;
+    padding-left: 0;
+}
+.tips-list li{
+    background-color: white;
+    border-left: 5px solid #ffd700;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.tips-list li strong{
+    color: #800000;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+.tips-list ul{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.tips-list ul li{
+    margin-bottom: 0;
+    background: none;
+    border-left: none;
+    padding: 5px 0;
+    box-shadow: none;
+}
 
 
 main img{
@@ -229,11 +259,87 @@ button{
     background-color: #660000;
     transform: scale(1.05);
 }
+.event-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 30px;
+}
+.weekly-schedule{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.week-card{
+    background-color: white;
+    border-left: 5px solid #ffd700;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    scroll-margin-top: 100px;
+}
+.week-card:hover{
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+.week-card h4{
+    color: #800000;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 10px;
+}
+.week-card .date{
+    color: #800000;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+.week-card .venue{
+    color: #666;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+.week-card .venue::before{
+    content: "📍";
+    margin-right: 5px;
+}
+.week-card .description{
+    color: #555;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+.week-card .btn-signup{
+    background-color: #800000;
+    color: white;
+    border: 2px solid #ffd700;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.week-card .btn-signup:hover{
+    background-color: #660000;
+    transform: scale(1.05);
+}
+
+
 
 @media(max-width: 768px){
     .navbar-brand{
         font-size: 1.2rem;
-
+    }
+    .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+    .navbar-nav{
+        flex-direction: row;
     }
 
     h4{
